@@ -255,6 +255,7 @@ alphaInput.addEventListener('input', function (event) {
 //text area
 textAreaInput.addEventListener('input', function () {
     let textAreaValue = textAreaInput.value.trim();
+    let text = textAreaInput.value.trim();
     textAreaInput.style.border = '1px solid red';
 
     if (!textAreaValue) {
@@ -269,10 +270,8 @@ textAreaInput.addEventListener('input', function () {
             textAreaInput.value = textAreaValue;
             textAreaInput.style.border = '1px solid #00ff55';
             textAreaValidation.textContent = '';
-        } else if (textAreaValue.length < 10) {
-            textAreaValidation.textContent = 'Description content should be at least 10 characters';
-            textAreaInput.style.border = '1px solid red';
-        } else {
+        } 
+         else {
             textAreaInput.style.border = '1px solid #00ff55';
             if (containsDuplicateWord(words)) {
                 textAreaInput.style.border = '1px solid red';
@@ -290,12 +289,12 @@ function containsDuplicateWord(words) {
     return words.length !== uniqueWords.size;
 }
 
-function containsDuplicateWord(text) {
-    const wordArray = text.match(/\b\w+\b/g) || [];
-    const uniqueWords = new Set(wordArray);
+// function containsDuplicateWord(text) {
+//     const wordArray = text.match(/\b\w+\b/g) || [];
+//     const uniqueWords = new Set(wordArray);
 
-    return wordArray.length !== uniqueWords.size;
-}
+//     return wordArray.length !== uniqueWords.size;
+// }
 
 AtextAreaInput.addEventListener('input', function () {
     let AtextAreaValue = AtextAreaInput.value.trim();
