@@ -93,7 +93,7 @@ function clearValidattion() {
     alphaValidation.textContent = '';
     textAreaValidation.textContent = '';
     checkValidation.textContent = '';
-   
+    CpasswordValidation.textContent=''
 }
 
 // to clear form
@@ -105,6 +105,7 @@ function clearForm() {
     CpasswordInput.value = '';
     numberInput.value = '';
     check1.checked = false
+    AtextAreaInput.value=''
 
 }
 
@@ -156,7 +157,8 @@ passwordInput.addEventListener('input', function () {
         passwordValidation.textContent = 'Password must be at least 8 characters';
     } else if (!passwordRegex.test(passwordValue)) {
         passwordValidation.textContent = 'Password must contain at least one special character, number, and capital letter';
-    } else {passInput.style.border = '1px solid #00ff55'
+    } else {
+        passInput.style.border = '1px solid #00ff55'
         passwordValidation.textContent = '';
     }
 });
@@ -180,7 +182,8 @@ function checkPasswordMatch() {
 CpasswordInput.addEventListener('input', checkPasswordMatch);
 
 
-const phoneRegex = /^[1-9]\d{9}$/;const countryPhoneLengths = {
+const phoneRegex = /^[1-9]\d{9}$/;
+const countryPhoneLengths = {
     'india': 10,
     'pak': 10,
     'uk': 11,
@@ -203,8 +206,9 @@ numberInput.addEventListener('input', function () {
     if (!phoneValue) {
         numberValidation.textContent = 'Phone number is required';
     } else if (phoneValue.length > countryPhoneLengths[selectedCountry]) {
-        // If user enters more digits, trim to the required length
+
         phoneValue = phoneValue.slice(0, countryPhoneLengths[selectedCountry]);
+        
         numberInput.value = phoneValue;
     }
 
@@ -318,3 +322,9 @@ togglePasswordBtn.addEventListener('click', function () {
     passInput.setAttribute('type', type);
     togglePasswordBtn.innerHTML = type === 'password' ? ' <i style="color: white;" class="fa-solid fa-eye"></i>' : ' <i style="color: white;" class="fa-solid fa-eye-slash"></i>';
 });
+
+
+
+function Login(){
+    window.location.href = 'Login.html';
+}
