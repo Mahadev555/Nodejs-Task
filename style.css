@@ -27,20 +27,20 @@ input {
 }
 
 .main {
+    display: flex;
     padding: 4px 5px 0px 5px;
-    width: 30%;
+    width: 99%;
     height: 98%;
-    border-radius: 10px;
-    background-color: rgba(235, 219, 219, 0.4);
+
 }
 
 .main-1 {
     width: 100%;
     color: rgb(0, 0, 0);
     padding: 8px 20px;
- 
-
-  
+    border-radius: 10px;
+    background-color: rgba(235, 219, 219, 0.4);
+    margin: 5px;
 }
 
 .main-2 {
@@ -99,7 +99,7 @@ input {
 }
 .textarea {
     padding: 7px 10px;
-    height: 50px;
+    height: 100px;
     border: 1px solid rgb(44, 44, 44);
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.4);
