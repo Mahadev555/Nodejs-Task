@@ -114,29 +114,47 @@ function clearForm() {
     AtextAreaInput.style.border = '1px solid black'
 }
 
-
-//email typing validation
-emailInput.addEventListener('input', function () {
+emailInput.addEventListener('input', function (event) {
     let emailValue = emailInput.value.trim();
-    emailInput.style.border = '1px solid red'
+    emailInput.style.border = '1px solid red';
+
+    if (event.data === ' ' || emailValue.includes(' ')) {
+        emailInput.value = emailValue.replace(/\s/g, ''); 
+        event.preventDefault();
+        return;
+    }
+
     if (!emailValue) {
         emailValidation.textContent = 'Email address is required';
     } else if (emailValue.length > 60) {
-        // Trim the email to 30 characters
+        // Trim the email to 60 characters
         emailValue = emailValue.slice(0, 60);
         emailInput.value = emailValue;
-        if (!emailRegex.test(emailValue)){
-            emailInput.style.border = '1px solid red'
-        }else{
-            emailInput.style.border = '1px solid #00ff55'
+        if (!emailRegex.test(emailValue)) {
+            emailInput.style.border = '1px solid red';
+        } else {
+            emailInput.style.border = '1px solid #00ff55';
         }   
     } else if (!emailRegex.test(emailValue)) {
         emailValidation.textContent = 'Invalid email address';
     } else if (emailValue.split('.').length > 3) {
-        emailValidation.textContent = 'you can not enter more than 2 dot in your email id';
+        emailValidation.textContent = 'You cannot enter more than 2 dots in your email id';
     } else {
-        emailInput.style.border = '1px solid #00ff55'
+        emailInput.style.border = '1px solid #00ff55';
         emailValidation.textContent = '';
+    }
+});
+
+
+emailInput.addEventListener('keydown', function (event) {
+    let emailValue = emailInput.value.trim();
+    emailInput.style.border = '1px solid red';
+
+    // Check if the pressed key is the spacebar
+    if (event.key === ' ' || event.keyCode === 32) {
+        // Prevent the default behavior of the spacebar
+        event.preventDefault();
+        return;
     }
 });
 
