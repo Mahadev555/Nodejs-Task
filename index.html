@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title> <!-- Include Normalize.css from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body style="display: flex;flex-direction: column; ">
+    <div class="maa" style="display: flex;flex-direction: column; align-items: center;width: -webkit-fill-available;
+    width: -webkit-fill-available;">
+        <div class="main">
+            <div class="main-1">
+                <div class="main-2">
+                    <label class="label">Name<span style="color: rgb(255, 251, 0);">*</span></label>
+                    <input class="input" placeholder="Enter alpha" type="text" name="text" id="alpha">
+                    <span class="validation" id="alphavalidation"></span>
+                </div>
+                <div class="main-2">
+                    <label class="label">Email text field validation<span
+                            style="color: rgb(255, 251, 0);">*</span></label>
+                    <input class="input" type="email" oninput="emailInput.value = emailInput.value.toLowerCase();"
+                        placeholder="Enter email address" name="email" id="email">
+                    <span class="validation" id="emailV"></span>
+                </div> <div class="main-2">
+                    <label class="label">Phone Number <span style="color: rgb(255, 251, 0);">*</span></label>
+                    <div>
+                        <select class="input" id="country" name="country" onchange="displayCountryInfo()">
+                            <option value="india">India (+91)</option>
+                            <option value="pak">Pakistan (+92)</option>
+                            <option value="uk">United Kingdom (+44)</option>
+                            <option value="usa">United States (+1)</option>
+                            <option value="china">China (+86)</option>
+                            <option value="brazil">Brazil (+55)</option>
+                            <option value="russia">Russia (+7)</option>
+                            <option value="indonesia">Indonesia (+62)</option>
+                            <option value="nigeria">Nigeria (+234)</option>
+                            <option value="bangladesh">Bangladesh (+880)</option>
+                            <option value="japan">Japan (+81)</option>
+                            <!-- Add more countries as needed -->
+                        </select>
+                        <input class="input" type="number" name="number" id="number">
+
+                    </div>
+                    <span class="validation" id="numberValidation"></span>
+                </div>
+
+                <div class="main-2">
+                    <label class="label" for="">Address<span style="color: rgb(255, 251, 0);">*</span></label>
+                    <textarea class="textarea" placeholder="Enter Address" name="" id="Atextarea"></textarea>
+                    <span class="validation" id="AtextareaValidation"></span>
+                </div>
+
+                
+
+            </div>
+
+
+
+            <div class="main-1">
+                <div class="main-2">
+                    <label class="label" for="">Description<span style="color: rgb(255, 251, 0);">*</span></label>
+                    <textarea class="textarea" placeholder="Enter text" name="" id="textarea"></textarea>
+                    <span class="validation" id="textareaValidation"></span>
+                </div>
+                <div class="main-2">
+                    <label class="label">Password <span style="color: rgb(255, 251, 0);">*</span></label>
+                    <div class="input-group">
+                        <input required type="password" class="input" id="password" style="
+                    width: 90%;
+                    border-color: grey;
+                    border-right: none;border-right: none;" placeholder="Enter Password">
+                        <button class="btn btn-outline" type="button" style="
+                    margin: 0;
+                    height: 38px;
+                    width: 10%;
+                    border-color: grey;
+                    border-left: none;
+                    background-color: rgba(0, 0, 0, 0.4);" id="togglePassword">
+                            <i style="color: white;" class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="validation" id="passwordValidation"></span>
+                </div>
+                <div class="main-2">
+                    <label class="label">Confirm  Password <span style="color: rgb(255, 251, 0);">*</span></label>
+                    <div class="input-group">
+                        <input required type="password" class="input" id="Cpassword" style="
+                    width: 100%;
+                    border-color: grey;
+                    border-right: none;border-right: none;" placeholder="Confirm Password">
+                        
+                    </div>
+                    <span class="validation" id="CpasswordValidation"></span>
+                </div>
+               
+                <div class="main-2">
+                    <label class="label" for=""> checkbox filed validation<span
+                            style="color: rgb(255, 251, 0);">*</span></label>
+                    <label>
+                        <input type="checkbox" id="mean" value="mean"> Agree
+                    </label>
+
+                    <span class="validation" id="checkValidation"></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="submit">
+            <button class="submitbtn" onclick="validateForm()">Submit</button>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

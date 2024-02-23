@@ -1,0 +1,190 @@
+body {
+    background: url('https://images.unsplash.com/photo-1475820620526-ec10c2ad96c7?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center center fixed;
+ 
+    background-size: cover;
+    height: auto;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+input {
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgb(0, 0, 0); 
+}
+
+.main {
+    display: flex;
+    padding: 4px 5px 0px 5px;
+    width: 99%;
+    height: 98%;
+
+}
+
+.main-1 {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    padding: 8px 20px;
+    border-radius: 10px;
+    background-color: rgba(235, 219, 219, 0.4);
+    margin: 5px;
+}
+
+.main-2 {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.label {
+    margin: 10px 0px;
+}
+
+.radio {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    padding: 7px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-shadow: none;
+    color: white;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+
+.input {
+    padding: 7px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-shadow: none;
+    color: white;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    outline: none; 
+       }
+
+.input::placeholder {
+    color: rgb(187, 187, 187);  
+    font-weight: 500;
+    
+}
+
+
+.textarea::placeholder {
+    
+    color: rgb(187, 187, 187);  
+    font-weight: 500;
+}
+.textarea {
+    padding: 7px 10px;
+    height: 100px;
+    border: 1px solid rgb(44, 44, 44);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    text-shadow: none;
+    
+    font-weight: 500;
+}
+.textarea:focus {
+    outline: none; 
+       }
+
+.inputColor {
+    width: 100%;
+}
+
+.btn {
+    width: 20%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    margin: 5px 0px;
+    cursor: pointer;
+    text-shadow: none;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin: 8px 0px;
+}
+
+.submitbtn {
+    width: 100px;
+    cursor: pointer; background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border: none;
+}
+
+.validation {
+    
+    color: rgb(255, 0, 0);
+    margin: 3px 0px;
+}
+
+
+.imagePreview {
+    width: 10px;
+    display: none;
+}
+
+#img {
+    border-radius: 5px 5px 0 0;
+}
+
+#imagePreviewContainer {
+    border-radius: 0 0 5px 5px;
+    padding-left: 11px;
+    padding-bottom: 6px;
+    border: 1px solid gray;
+    border-top: none;
+    margin-top: -7px;
+   
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+input[type="number"] {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+ 
