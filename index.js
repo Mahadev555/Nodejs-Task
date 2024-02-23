@@ -106,7 +106,12 @@ function clearForm() {
     numberInput.value = '';
     check1.checked = false
     AtextAreaInput.value=''
-
+    emailInput.style.border = '1px solid black'
+    alphaInput.style.border = '1px solid black'
+    textAreaInput.style.border = '1px solid black'
+    passInput.style.border = '1px solid black'
+    numberInput.style.border = '1px solid black'
+    AtextAreaInput.style.border = '1px solid black'
 }
 
 
