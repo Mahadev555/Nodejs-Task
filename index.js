@@ -308,8 +308,8 @@ AtextAreaInput.addEventListener('input', function () {
         
         AtextAreaInput.style.border = '1px solid #00ff55'
         
-    } else if (AtextAreaValue.length < 10 || AtextAreaValue.length > 50) {
-        AtextAreaValidation.textContent = 'Address content should be between 10 and 20 characters';
+    } else if (AtextAreaValue.length > 50) {
+        AtextAreaValidation.textContent = 'Address content should be less than 20 characters';
     } else {
         AtextAreaInput.style.border = '1px solid #00ff55'
         AtextAreaValidation.textContent = '';
