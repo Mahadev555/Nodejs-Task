@@ -5,26 +5,26 @@ const passMatcvh = document.getElementById('passMatch')
 const array = [
     {
         email: "mahadev@gmail.com",
-        password: "mahadev"
+        password: "Mahadev@1"
     },
     {
         email: "atharvx555@gmail.com",
-        password: "atharvx"
+        password: "Atharvx@1"
     }
     ,
     {
         email: "rhul@gmail.com",
-        password: "rahul"
+        password: "Rahul@1"
     }
     ,
     {
         email: "shyam@gmail.com",
-        password: "shyam"
+        password: "Shyam@1"
     }
     ,
     {
         email: "kedar@gmail.com",
-        password: "kedar"
+        password: "Kedar@1"
     }
 ]
 
