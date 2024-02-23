@@ -301,7 +301,7 @@ AtextAreaInput.addEventListener('input', function () {
     let AtextAreaValue = AtextAreaInput.value.trim();
     AtextAreaInput.style.border = '1px solid red'
     if (!AtextAreaValue) {
-        textAreaValidation.textContent = 'Address is required';
+        AtextAreaValidation.textContent = 'Address is required';
     } else if (AtextAreaValue.length > 20) {
         AtextAreaValue = AtextAreaValue.slice(0, 20);
         AtextAreaInput.value = AtextAreaValue;
