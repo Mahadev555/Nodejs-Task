@@ -144,10 +144,16 @@ emailInput.addEventListener('input', function () {
 // password typing validation
 const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*(),.?":{}|<>])(?=.*[0-9]).{8,16}$/;
 
-passwordInput.addEventListener('input', function () {
+passwordInput.addEventListener('input', function (event) {
     let passwordValue = passwordInput.value.trim();
     passwordInput.style.border = '1px solid red'
 
+
+    if (event.data === ' ' || passwordValue.includes(' ')) {
+        passwordInput.value = passwordValue.replace(/\s/g, ''); 
+        event.preventDefault();
+        return;
+    }
     if (!passwordValue) {
         passwordValidation.textContent = 'Password is required';
     } else if (passwordValue.length > 16) {
@@ -240,6 +246,9 @@ alphaInput.addEventListener('input', function (event) {
         return;
     }
 
+    // Capitalize the first letter
+    alphaInput.value = alphaValue.charAt(0).toUpperCase() + alphaValue.slice(1);
+
     if (!alphaValue) {
         alphaValidation.textContent = 'Name is required';
     } else if (alphaValue.length > 10) {
@@ -259,24 +268,30 @@ alphaInput.addEventListener('input', function (event) {
 
 //text area
 textAreaInput.addEventListener('input', function () {
-    let textAreaValue = textAreaInput.value.trim();
-    let text = textAreaInput.value.trim();
+    let textAreaValue = textAreaInput.value;
+
+    // Remove leading spaces
+    textAreaValue = textAreaValue.replace(/^\s+/, '');
+
+    // Replace multiple consecutive spaces with a single space
+    textAreaValue = textAreaValue.replace(/\s{2,}/g, ' ');
+
+    let words = textAreaValue.split(/\s+/);
+
+    textAreaInput.value = textAreaValue; // Update textarea value
+
     textAreaInput.style.border = '1px solid red';
 
     if (!textAreaValue) {
         textAreaValidation.textContent = 'Description is required';
     } else {
-        // Split  
-        let words = textAreaValue.split(/\s+/);
-
-        if (words.length > 50) { 
+        if (words.length > 50) {
             words = words.slice(0, 50);
             textAreaValue = words.join(' ');
             textAreaInput.value = textAreaValue;
             textAreaInput.style.border = '1px solid #00ff55';
             textAreaValidation.textContent = '';
-        } 
-         else {
+        } else {
             textAreaInput.style.border = '1px solid #00ff55';
             if (containsDuplicateWord(words)) {
                 textAreaInput.style.border = '1px solid red';
@@ -287,6 +302,8 @@ textAreaInput.addEventListener('input', function () {
         }
     }
 });
+
+
 
 // Function to check for duplicate words
 function containsDuplicateWord(words) {
@@ -300,22 +317,31 @@ function containsDuplicateWord(words) {
 
 //     return wordArray.length !== uniqueWords.size;
 // }
-
 AtextAreaInput.addEventListener('input', function () {
-    let AtextAreaValue = AtextAreaInput.value.trim();
-    AtextAreaInput.style.border = '1px solid red'
+    let AtextAreaValue = AtextAreaInput.value;
+    
+    // Remove leading spaces
+    AtextAreaValue = AtextAreaValue.replace(/^\s+/, '');
+
+    // Replace multiple consecutive spaces with a single space
+    AtextAreaValue = AtextAreaValue.replace(/\s{2,}/g, ' ');
+
+    // Update textarea value
+    AtextAreaInput.value = AtextAreaValue;
+
+    AtextAreaInput.style.border = '1px solid red';
+
     if (!AtextAreaValue) {
         AtextAreaValidation.textContent = 'Address is required';
     } else if (AtextAreaValue.length > 20) {
         AtextAreaValue = AtextAreaValue.slice(0, 20);
         AtextAreaInput.value = AtextAreaValue;
-        
-        AtextAreaInput.style.border = '1px solid #00ff55'
-        
+        AtextAreaInput.style.border = '1px solid #00ff55';
+        AtextAreaValidation.textContent = '';
     } else if (AtextAreaValue.length > 50) {
         AtextAreaValidation.textContent = 'Address content should be less than 20 characters';
     } else {
-        AtextAreaInput.style.border = '1px solid #00ff55'
+        AtextAreaInput.style.border = '1px solid #00ff55';
         AtextAreaValidation.textContent = '';
     }
 });
