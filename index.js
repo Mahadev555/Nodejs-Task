@@ -208,7 +208,7 @@ numberInput.addEventListener('input', function () {
     } else if (phoneValue.length > countryPhoneLengths[selectedCountry]) {
 
         phoneValue = phoneValue.slice(0, countryPhoneLengths[selectedCountry]);
-        
+
         numberInput.value = phoneValue;
     }
 
@@ -259,24 +259,36 @@ textAreaInput.addEventListener('input', function () {
 
     if (!textAreaValue) {
         textAreaValidation.textContent = 'Description is required';
-    } else if (textAreaValue.length > 50) {
-        textAreaValue = textAreaValue.slice(0, 50);
-        textAreaInput.value = textAreaValue;
-        textAreaInput.style.border = '1px solid #00ff55';
-        textAreaValidation.textContent = '';
-    } else if (textAreaValue.length < 10) {
-        textAreaValidation.textContent = 'Description content should be at least 10 characters';
-        textAreaInput.style.border = '1px solid red'
     } else {
-        textAreaInput.style.border = '1px solid #00ff55';
-        if (containsDuplicateWord(textAreaValue)) {
-            textAreaInput.style.border = '1px solid red'
-            textAreaValidation.textContent = 'Duplicate words are not allowed';
-        } else {
+        // Split  
+        let words = textAreaValue.split(/\s+/);
+
+        if (words.length > 50) { 
+            words = words.slice(0, 50);
+            textAreaValue = words.join(' ');
+            textAreaInput.value = textAreaValue;
+            textAreaInput.style.border = '1px solid #00ff55';
             textAreaValidation.textContent = '';
+        } else if (textAreaValue.length < 10) {
+            textAreaValidation.textContent = 'Description content should be at least 10 characters';
+            textAreaInput.style.border = '1px solid red';
+        } else {
+            textAreaInput.style.border = '1px solid #00ff55';
+            if (containsDuplicateWord(words)) {
+                textAreaInput.style.border = '1px solid red';
+                textAreaValidation.textContent = 'Duplicate words are not allowed';
+            } else {
+                textAreaValidation.textContent = '';
+            }
         }
     }
 });
+
+// Function to check for duplicate words
+function containsDuplicateWord(words) {
+    const uniqueWords = new Set(words);
+    return words.length !== uniqueWords.size;
+}
 
 function containsDuplicateWord(text) {
     const wordArray = text.match(/\b\w+\b/g) || [];
