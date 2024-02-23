@@ -46,8 +46,6 @@ function submitData() {
     let valueEmail = email.value;
     let valuePass = pass.value.trim();
 
-
-
     const emailValidationMessage = document.getElementById('EmailValidation');
     const passValidationMsg = document.getElementById('PasswordValidation');
 
@@ -111,6 +109,7 @@ const passwordInput = document.getElementById('pass')
 const passwordValidation = document.getElementById('passwordValidation');
 const emailValidation = document.getElementById('emailV');
 const emailRegex = /^[a-zA-Z]\w*([\.-]?\w+)*@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z]+\.){1}(com|in|org)))$/;
+
 
 //email typing validation
 emailInput.addEventListener('input', function () {

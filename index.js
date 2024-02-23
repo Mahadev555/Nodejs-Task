@@ -174,10 +174,14 @@ passwordInput.addEventListener('input', function (event) {
     }
 });
 
-function checkPasswordMatch() {
+function checkPasswordMatch(event) {
     const password = passwordInput.value;
     const confirmPassword = CpasswordInput.value;
-
+    if (event.data === ' ' || confirmPassword.includes(' ')) {
+        CpasswordInput.value = confirmPassword.replace(/\s/g, ''); 
+        event.preventDefault();
+        return;
+    }
     if (password === confirmPassword) {
         // Passwords match
         CpasswordValidation.innerHTML = 'Passwords match';
